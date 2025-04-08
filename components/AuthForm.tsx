@@ -11,7 +11,6 @@ import Link from 'next/link';
 import { loginAction, signUpAction } from '@/actions/users';
 import { useSearchParams } from 'next/navigation';
 import { toasts } from '@/lib/toasts';
-import { Suspense } from 'react'
 
 type Props = {
   type: 'login' | 'signUp';
@@ -56,7 +55,6 @@ function AuthForm({ type }: Props) {
   };
 
   return (
-    <Suspense>
     <form action={handleSubmit}>
       <CardContent className="grid w-full items-center gap-4">
         <div className="flex flex-col space-y-1.5">
@@ -107,7 +105,6 @@ function AuthForm({ type }: Props) {
         </p>
       </CardFooter>
     </form>
-    </Suspense>
   );
 }
 
